@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@color/gris"
+    android:orientation="vertical"
+    android:gravity="center">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/elige_un_color"
+        android:textColor="@color/white"
+        android:textSize="25sp"/>
+    <RadioGroup
+        android:id="@+id/rgColores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <RadioButton
+            android:id="@+id/rbBlanco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/blanco"
+            android:checked="true"
+            android:text="@string/blanco"
+            android:textColor="@color/white" />
+        <RadioButton
+            android:id="@+id/rbRojo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/rojo"
+            android:checked="true"
+            android:text="@string/rojo"
+            android:textColor="@color/rojo" />
+        <RadioButton
+            android:id="@+id/rbNaranja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/naranja"
+            android:checked="true"
+            android:text="@string/naranja"
+            android:textColor="@color/naranja" />
+        <RadioButton
+            android:id="@+id/rbAmarillo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/amarillo"
+            android:checked="false"
+            android:text="@string/amarillo"
+            android:textColor="@color/amarillo" />
+        <RadioButton
+            android:id="@+id/rbVerde"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/verde"
+            android:checked="false"
+            android:text="@string/verde"
+            android:textColor="@color/verde" />
+        <RadioButton
+            android:id="@+id/rbCian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/cian"
+            android:checked="false"
+            android:text="@string/cian"
+            android:textColor="@color/cian" />
+        <RadioButton
+            android:id="@+id/rbAzul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/azul"
+            android:checked="false"
+            android:text="@string/azul"
+            android:textColor="@color/azul" />
+        <RadioButton
+            android:id="@+id/rbVioleta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/violeta"
+            android:checked="false"
+            android:text="@string/violeta"
+            android:textColor="@color/violeta" />
+        <RadioButton
+            android:id="@+id/rbNegro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/negro"
+            android:checked="true"
+            android:text="@string/negro"
+            android:textColor="@color/negro" />
+        <Button
+            android:id="@+id/btnAplicar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/aplicar"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/negro"/>
+    </RadioGroup>
+</LinearLayout>

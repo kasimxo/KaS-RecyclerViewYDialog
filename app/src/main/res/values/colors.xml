@@ -7,12 +7,18 @@
     <color name="pink40">#66FF33FC</color>
     <color name="blue80">#CC237EEC</color>
 
-    <color name="c1">#CC237EEC</color>
-    <color name="c2">#CC237EEC</color>
-    <color name="c3">#CC237EEC</color>
-    <color name="c4">#CC237EEC</color>
-    <color name="c5">#CC237EEC</color>
 
+    <color name="blanco">#ffffff</color>
+    <color name="rojo">#DD1818</color>
+    <color name="naranja">#E16D12</color>
+    <color name="amarillo">#E8DE1D</color>
+    <color name="verde">#47D128</color>
+    <color name="cian">#3BDCAE</color>
+    <color name="azul">#3B65D1</color>
+    <color name="violeta">#8f489a</color>
+    <color name="negro">#000000</color>
+    <color name="gris">#8F8787</color>
+    <color name="variable">#CC237EEC</color>
 
 
 </resources>
