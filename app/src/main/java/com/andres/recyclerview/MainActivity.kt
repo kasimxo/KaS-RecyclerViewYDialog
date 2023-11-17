@@ -70,8 +70,8 @@ class MainActivity : AppCompatActivity() {
         val btnAplicar: Button = dialog.findViewById(R.id.btnAplicar)
         val rgColores: RadioGroup = dialog.findViewById(R.id.rgColores)
         val rgSelector: RadioGroup = dialog.findViewById(R.id.selector)
-        var colorSelecionado: RadioButton = dialog.findViewById<RadioButton>(rgColores.checkedRadioButtonId)
-        var selectorSeleccionado: RadioButton = dialog.findViewById<RadioButton>(rgSelector.checkedRadioButtonId)
+        var colorSelecionado: RadioButton
+        var selectorSeleccionado: RadioButton
         dialog.show()
         btnAplicar.setOnClickListener {
 
@@ -80,11 +80,14 @@ class MainActivity : AppCompatActivity() {
 
             when(selectorSeleccionado.text) {
                 "Fondo" -> cambiarFondo(aplicarColor(colorSelecionado))
-                "Verticales" -> cambiarVerticales(colorSelecionado)
+                "V 1" -> cambiarVerticales(colorSelecionado,0)
+                "V 2" -> cambiarVerticales(colorSelecionado,1)
+                "V 3" -> cambiarVerticales(colorSelecionado,2)
+                "V 4" -> cambiarVerticales(colorSelecionado,3)
+                "V 5" -> cambiarVerticales(colorSelecionado,4)
                 "H 1" -> cambiarHorizontal(1, aplicarColor(colorSelecionado))
                 "H 2" -> cambiarHorizontal(2, aplicarColor(colorSelecionado))
                 "H 3" -> cambiarHorizontal(3, aplicarColor(colorSelecionado))
-
             }
             dialog.hide()
 
@@ -100,19 +103,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun cambiarVerticales(colorSelecionado: RadioButton) {
+    private fun cambiarVerticales(colorSelecionado: RadioButton, pos: Int) {
         color = aplicarColor(colorSelecionado)
         colorsAdapter.color = color
-        colorsAdapter.notifyDataSetChanged()
+        colorsAdapter.notifyItemChanged(pos)
+
     }
     private fun cambiarFondo(color: Int) {
         findViewById<ConstraintLayout>(R.id.FondoCL).setBackgroundColor(color)
     }
 
     private fun aplicarColor(RadioButtonSelected: RadioButton) : Int {
-
         when(RadioButtonSelected.text){
-
             "Blanco" -> return ContextCompat.getColor(this, R.color.blanco);
             "Rojo" -> return ContextCompat.getColor(this, R.color.rojo);
             "Naranja" -> return ContextCompat.getColor(this, R.color.naranja);
@@ -122,7 +124,6 @@ class MainActivity : AppCompatActivity() {
             "Azul" -> return ContextCompat.getColor(this, R.color.azul);
             "Violeta" -> return ContextCompat.getColor(this, R.color.violeta);
             "Negro" -> return ContextCompat.getColor(this, R.color.negro);
-
         }
         return ContextCompat.getColor(this, R.color.blancoRoto);
     }

@@ -1,6 +1,7 @@
 package com.andres.recyclerview
 
 import android.content.res.ColorStateList
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.view.View
 import android.widget.TextView
@@ -17,33 +18,46 @@ class ColorsViewHolder (view: View) : RecyclerView.ViewHolder(view){
 
         when(position) {
             0 -> {
-                viewContainer.alpha = 0.2F
-                viewContainer.setBackgroundColor( color)
-                texto.setText("V 1\nOpacidad 20%")
+                viewContainer.setBackgroundColor(opacidadColor(0,color))
+                texto.setText("V 1\nOpacity 20%")
             }
             1 -> {
-                viewContainer.alpha = 0.35F
-                viewContainer.setBackgroundColor( color)
-                texto.setText("V 2\nOpacidad 35%")
+                viewContainer.setBackgroundColor(opacidadColor(1,color))
+                texto.setText("V 2\nOpacity 35%")
             }
             2 -> {
-                viewContainer.alpha = 0.5F
-                viewContainer.setBackgroundColor( color)
-                texto.setText("V 3\nOpacidad 50%")
+                viewContainer.setBackgroundColor(opacidadColor(2,color))
+                texto.setText("V 3\nOpacity 50%")
             }
             3 -> {
-                viewContainer.alpha = 0.65F
-                viewContainer.setBackgroundColor( color)
-                texto.setText("V 4\nOpacidad 65%")
+                viewContainer.setBackgroundColor(opacidadColor(3,color))
+                texto.setText("V 4\nOpacity 65%")
             }
             4 -> {
-                viewContainer.alpha = 0.8F
-                viewContainer.setBackgroundColor(color)
-                texto.setText("V 5\nOpacidad 80%")
+                viewContainer.setBackgroundColor(opacidadColor(4,color))
+                texto.setText("V 5\nOpacity 80%")
             }
         }
 
 
 
+    }
+
+    fun opacidadColor(pos: Int, color: Int) : Int{
+        var cadena = Integer.toHexString(color).substring(2);
+
+
+        when(pos){
+            0 -> cadena = "#20"+cadena
+            1 -> cadena = "#35"+cadena
+            2 -> cadena = "#50"+cadena
+            3 -> cadena = "#65"+cadena
+            4 -> cadena = "#80"+cadena
+        }
+
+
+        texto.setText(cadena)
+
+        return Color.parseColor(cadena)
     }
 }
