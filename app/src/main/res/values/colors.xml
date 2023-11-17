@@ -3,10 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="purple">#905C99</color>
-    <color name="orange20">#33FF5733</color>
-    <color name="pink40">#66FF33FC</color>
-    <color name="blue80">#CC237EEC</color>
-
+    <color name="orange20">#FF5733</color>
+    <color name="pink40">#FF33FC</color>
+    <color name="blue80">#237EEC</color>
 
     <color name="blanco">#ffffff</color>
     <color name="rojo">#DD1818</color>
@@ -20,5 +19,6 @@
     <color name="gris">#8F8787</color>
     <color name="variable">#CC237EEC</color>
 
+    <color name="blancoRoto">#D5D0C9</color>
 
 </resources>

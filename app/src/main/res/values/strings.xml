@@ -12,4 +12,9 @@
     <string name="naranja">Naranja</string>
     <string name="rojo">Rojo</string>
     <string name="blanco">Blanco</string>
+    <string name="elige_una_barra">Elige una barra</string>
+    <string name="h_1">H 1</string>
+    <string name="h_2">H 2</string>
+    <string name="h_3">H 3</string>
+    <string name="fondo">Fondo</string>
 </resources>

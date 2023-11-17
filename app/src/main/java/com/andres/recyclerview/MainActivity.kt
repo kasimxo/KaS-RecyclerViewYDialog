@@ -6,9 +6,12 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore.Audio.Radio
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -66,20 +69,48 @@ class MainActivity : AppCompatActivity() {
 
         val btnAplicar: Button = dialog.findViewById(R.id.btnAplicar)
         val rgColores: RadioGroup = dialog.findViewById(R.id.rgColores)
-        var selecionado: RadioButton = dialog.findViewById<RadioButton>(rgColores.checkedRadioButtonId)
+        val rgSelector: RadioGroup = dialog.findViewById(R.id.selector)
+        var colorSelecionado: RadioButton = dialog.findViewById<RadioButton>(rgColores.checkedRadioButtonId)
+        var selectorSeleccionado: RadioButton = dialog.findViewById<RadioButton>(rgSelector.checkedRadioButtonId)
         dialog.show()
         btnAplicar.setOnClickListener {
-            selecionado = dialog.findViewById<RadioButton>(rgColores.checkedRadioButtonId)
-            color = aplicarColor(selecionado)
+
+            colorSelecionado = dialog.findViewById<RadioButton>(rgColores.checkedRadioButtonId)
+            selectorSeleccionado = dialog.findViewById<RadioButton>(rgSelector.checkedRadioButtonId)
+
+            when(selectorSeleccionado.text) {
+                "Fondo" -> cambiarFondo(aplicarColor(colorSelecionado))
+                "Verticales" -> cambiarVerticales(colorSelecionado)
+                "H 1" -> cambiarHorizontal(1, aplicarColor(colorSelecionado))
+                "H 2" -> cambiarHorizontal(2, aplicarColor(colorSelecionado))
+                "H 3" -> cambiarHorizontal(3, aplicarColor(colorSelecionado))
+
+            }
             dialog.hide()
-            colorsAdapter.color = color
-            colorsAdapter.notifyDataSetChanged()
+
+
         }
     }
 
+    private fun cambiarHorizontal(numero: Int, color: Int) {
+        when(numero) {
+            1 -> findViewById<CardView>(R.id.h1).setCardBackgroundColor(color)
+            2 ->findViewById<CardView>(R.id.h2).setCardBackgroundColor(color)
+            3 ->findViewById<CardView>(R.id.h3).setCardBackgroundColor(color)
+        }
+    }
+
+    private fun cambiarVerticales(colorSelecionado: RadioButton) {
+        color = aplicarColor(colorSelecionado)
+        colorsAdapter.color = color
+        colorsAdapter.notifyDataSetChanged()
+    }
+    private fun cambiarFondo(color: Int) {
+        findViewById<ConstraintLayout>(R.id.FondoCL).setBackgroundColor(color)
+    }
+
     private fun aplicarColor(RadioButtonSelected: RadioButton) : Int {
-        var colorSeleccionado: Int = ContextCompat.getColor(this, R.color.naranja);
-        btn.text = RadioButtonSelected.text
+
         when(RadioButtonSelected.text){
 
             "Blanco" -> return ContextCompat.getColor(this, R.color.blanco);
@@ -93,6 +124,6 @@ class MainActivity : AppCompatActivity() {
             "Negro" -> return ContextCompat.getColor(this, R.color.negro);
 
         }
-        return ContextCompat.getColor(this, R.color.blanco);
+        return ContextCompat.getColor(this, R.color.blancoRoto);
     }
 }

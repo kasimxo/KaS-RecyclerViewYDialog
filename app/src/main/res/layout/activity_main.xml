@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/FondoCL"
+    android:alpha="0.8"
+    >
 
         <TextView
             android:layout_width="match_parent"
@@ -48,21 +51,51 @@
                     android:id="@+id/h1"
                     app:cardBackgroundColor="@color/orange20"
                     android:layout_marginVertical="20dp"
-                    />
+                    android:alpha="0.2"
+                    >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="H 1\nOpacidad 20%"
+                            android:textSize="25dp"
+                            android:textColor="@color/black"
+                            android:alpha="1"
+                            />
+                </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:id="@+id/h2"
                     app:cardBackgroundColor="@color/pink40"
                     android:layout_marginVertical="20dp"
-                    />
+                    android:alpha="0.5"
+                    >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="H 2\nOpacidad 50%"
+                            android:textSize="25dp"
+                            android:textColor="@color/black"
+                            android:alpha="1"
+                            />
+                </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:id="@+id/h3"
                     app:cardBackgroundColor="@color/blue80"
                     android:layout_marginVertical="20dp"
-                    />
+                    android:alpha="0.8"
+                    >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="H 3\nOpacidad 80%"
+                            android:textSize="25dp"
+                            android:textColor="@color/black"
+                            android:alpha="1"
+                            />
+                </androidx.cardview.widget.CardView>
 
 
         </LinearLayout>
